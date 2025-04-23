@@ -1,0 +1,60 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-gray-800 bg-gray-50;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-medium;
+  }
+}
+
+/* Custom prose styles for article content */
+.prose {
+  @apply max-w-none;
+}
+
+.prose h2 {
+  @apply text-2xl font-serif font-bold mt-8 mb-4;
+}
+
+.prose p {
+  @apply my-6 text-gray-700 leading-relaxed;
+}
+
+.prose a {
+  @apply text-blue-600 hover:underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .prose h2 {
+    @apply text-xl;
+  }
+}
+
+/* Animation for page transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
